@@ -1,0 +1,32 @@
+<h1>HTTP Calls</h1>
+
+<h2> {{ response$ | async  | json }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="process()">
+
+  <table>
+    <tr>
+      <td>Message</td>
+      <td>
+        <input type="text" size="30" placeholder="Your message" formControlName="message">
+      </td>
+    </tr>
+    <tr>
+      <td>Method</td>
+      <td>
+        <select formControlName="method">
+          <option value="0">GET</option>
+          <option value="1">POST JSON</option>
+          <option value="2">POST URL ENCODEDFORM</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        <button type="submit" [disabled]="form.invalid">Send</button>
+      </td>
+    </tr>
+  </table>
+
+</form>
